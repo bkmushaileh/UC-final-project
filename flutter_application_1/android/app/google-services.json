@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289978390831",
+    "project_id": "finalme-70f25",
+    "storage_bucket": "finalme-70f25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289978390831:android:fd2da0e853fd17728ca9da",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289978390831-pucg3t808d00eku1mm93u2aevuvtmbvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACmnnGcwguVA41Xrv7EKQeKDiRyJgKCPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289978390831-pucg3t808d00eku1mm93u2aevuvtmbvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
