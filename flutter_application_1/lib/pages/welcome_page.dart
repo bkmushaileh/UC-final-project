@@ -1,10 +1,9 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/widgets/button/reponsive_Button.dart';
+import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/pages/navPages/home_page.dart';
+import 'package:flutter_application_1/pages/navPages/main_page.dart';
 import 'package:flutter_application_1/widgets/text/app_large_text.dart';
 import 'package:flutter_application_1/widgets/text/app_text.dart';
 import 'package:lottie/lottie.dart';
@@ -68,8 +67,20 @@ class _WelcomePageState extends State<WelcomePage> {
                             SizedBox(
                               height: 20,
                             ),
-                            ResponsiveButton(
-                              width: 100,
+                            ElevatedButton.icon(
+                              onPressed: () {
+                                // Respond to button press
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const MyMainPage()),
+                                );
+                              },
+                              label: Text("Skip"),
+                              icon: Icon(Icons.skip_next, size: 18),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color.fromARGB(255, 242, 104, 104)
+                                      .withOpacity(0.9)),
                             )
                           ],
                         ),

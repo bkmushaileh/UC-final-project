@@ -36,13 +36,21 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  image_picker: ^0.8.5+3
+  bloc:
+  flutter_bloc:
+  equatable:
+
   firebase_auth: ^3.9.0
   firebase_core: ^1.22.0
-  lottie: ^0.6.0
+  lottie: ^1.4.3
+  audioplayers: ^1.1.0
 
 dev_dependencies:
-  flutter_test:
+  flutter_test: 
     sdk: flutter
+
   # Conentric Transaition:
   concentric_transition: ^1.0.3
    # The "flutter_lints" package below contains a set of recommended lints to
@@ -62,6 +70,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  
+
 
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -72,11 +82,30 @@ flutter:
     - assets/lottie/developer-yoga.json
     - assets/right-arrow-2.png
     - assets/Relax.jpg
+    - assets/Relax2.jpg
+    - assets/Relax3.jpg
     - assets/meditation.png
     - assets/reading.png
     - assets/sleep.png
     - assets/yoga.png
     - assets/listening.png
+    - assets/m1.jpg
+    - assets/m2.jpg
+    - assets/m3.jpg
+    - assets/h1.jpg
+    - assets/h2.jpg
+    - assets/h3.jpg
+    - assets/h4.jpg
+    - assets/music/waves.m4a
+    - assets/music/music-cover.jpeg
+    - assets/music/musicimg.jpg
+    - assets/music/ocean.mp3
+    - assets/music/birds.mp3
+    - assets/music/forest.mp3
+    - assets/fam.heic
+    - assets/travel.png
+
+
 
 
 

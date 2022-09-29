@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/pages/actvity.dart';
+import 'package:flutter_application_1/pages/detail_page.dart';
+import 'package:flutter_application_1/pages/music.dart';
 import 'package:flutter_application_1/widgets/text/app_large_text.dart';
 import 'package:flutter_application_1/widgets/text/app_text.dart';
 
@@ -19,12 +22,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     // Key -> images , value -> text
     "listening.png": "Music",
 
-    "sleep.png": "Better Sleep",
+    "travel.png": "Activity",
     "yoga.png": "Practice",
 
     "reading.png": "Read",
     "meditation.png": "Meditate",
   };
+
+  final List relaxImages = [
+    // Key -> images , value -> text
+    "assets/Relax2.jpg",
+    "assets/Relax.jpg",
+    "assets/Relax3.jpg",
+  ];
+  final List mediateImages = [
+    // Key -> images , value -> text
+    "assets/m1.jpg",
+    "assets/m2.jpg",
+    "assets/m3.jpg",
+  ];
+  final List healthImages = [
+    // Key -> images , value -> text
+    "assets/h4.jpg",
+    "assets/h1.jpg",
+    "assets/h3.jpg",
+  ];
   @override
   Widget build(BuildContext context) {
     //Everytime we click it get rebuild the page again
@@ -52,6 +74,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.grey.withOpacity(0.5),
+                    image: DecorationImage(
+                        image: AssetImage("assets/fam.heic"),
+                        fit: BoxFit.cover),
                   ),
                 )
               ],
@@ -98,6 +123,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   itemCount: 3,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
+                    return GestureDetector(
+                      onTap: (() {
+                        if (index == 0) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailPage()));
+                        }
+                      }),
+                      child: Container(
+                          margin: const EdgeInsets.only(right: 10, top: 10),
+                          width: 200,
+                          height: 250,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage(relaxImages[index]),
+                                  fit: BoxFit.cover))),
+                    );
+                  },
+                ),
+                ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
                     return Container(
                         margin: const EdgeInsets.only(right: 10, top: 10),
                         width: 200,
@@ -106,15 +157,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.white,
                             image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/Relax.jpg",
-                                ),
+                                image: AssetImage(mediateImages[index]),
                                 fit: BoxFit.cover)));
                   },
                 ),
-                Text("Hi"),
-                Text("There"),
-                Text("Bye"),
+                ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                        margin: const EdgeInsets.only(right: 10, top: 10),
+                        width: 200,
+                        height: 250,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage(healthImages[index]),
+                                fit: BoxFit.cover)));
+                  },
+                ),
               ],
             ),
           ),
@@ -156,17 +218,35 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     margin: const EdgeInsets.only(right: 30),
                     child: Column(
                       children: [
-                        Container(
-                            width: 70,
-                            height: 70,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.white,
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/" + images.keys.elementAt(index),
-                                    ),
-                                    fit: BoxFit.cover))),
+                        GestureDetector(
+                          onTap: () {
+                            if (index == 0) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Music()),
+                              );
+                            } else if (index == 1) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Activity()),
+                              );
+                            }
+                          },
+                          child: Container(
+                              width: 70,
+                              height: 70,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                        "assets/" +
+                                            images.keys.elementAt(index),
+                                      ),
+                                      fit: BoxFit.cover))),
+                        ),
                         SizedBox(height: 5),
                         Container(
                           child: AppText(

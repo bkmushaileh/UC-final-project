@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/detail_page.dart';
-import 'package:flutter_application_1/widgets/trash/login_screen.dart';
-import 'package:flutter_application_1/pages/navPages/main_page.dart';
+import 'package:flutter_application_1/pages/music.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter_application_1/pages/welcome_page.dart';
 import 'package:flutter_application_1/widgets/trash/animated_indicator.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'widgets/trash/firebase_options.dart';
 import 'widgets/trash/second_page.dart';
 
@@ -35,10 +36,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MainPage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: WelcomePage());
   }
 }
 
