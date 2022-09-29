@@ -36,20 +36,28 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
+  like_button: ^2.0.4
   image_picker: ^0.8.5+3
   bloc:
   flutter_bloc:
   equatable:
-
+  video_player: ^2.4.2
   firebase_auth: ^3.9.0
   firebase_core: ^1.22.0
   lottie: ^1.4.3
   audioplayers: ^1.1.0
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test: 
     sdk: flutter
+  chewie: ^1.3.5 
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/Ananda.png"
+
 
   # Conentric Transaition:
   concentric_transition: ^1.0.3
@@ -104,8 +112,14 @@ flutter:
     - assets/music/forest.mp3
     - assets/fam.heic
     - assets/travel.png
-
-
+    - assets/video/year.mov
+    - assets/banner.png
+    - assets/banner2.png
+    - assets/banner3.png
+    - assets/Cork-Block-Manduka.png
+    - assets/ProliteYogaMat.png
+    - assets/GratitudeBlackSand.png
+    - assets/Believeactiveflowtop.png
 
 
 

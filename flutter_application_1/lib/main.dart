@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/detail_page.dart';
+import 'package:flutter_application_1/pages/navPages/details/detail_page.dart';
 import 'package:flutter_application_1/pages/music.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_application_1/pages/welcome_page.dart';
@@ -61,7 +61,7 @@ class _MainPageState extends State<MainPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      home: DetailPage(),
+      //home: DetailPage(),
       // home: Scaffold(
       //   body: SafeArea(
       //     child: Container(

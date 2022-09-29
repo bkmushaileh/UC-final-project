@@ -16,7 +16,6 @@ class MyMainPage extends StatefulWidget {
 class _MyMainPageState extends State<MyMainPage> {
   List pages = [
     HomePage(),
-    BarItemPage(),
     SearchPage(),
     MyPage(),
   ];
@@ -51,10 +50,10 @@ class _MyMainPageState extends State<MyMainPage> {
               label: "Home",
               icon: Icon(Icons.apps),
             ),
-            BottomNavigationBarItem(
-              label: "Bar",
-              icon: Icon(Icons.bar_chart_sharp),
-            ),
+            // BottomNavigationBarItem(
+            //   label: "Bar",
+            //   icon: Icon(Icons.bar_chart_sharp),
+            // ),
             BottomNavigationBarItem(
               label: "Search",
               icon: Icon(Icons.search),

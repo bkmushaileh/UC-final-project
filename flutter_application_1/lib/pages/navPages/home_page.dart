@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/model/event.dart';
 import 'package:flutter_application_1/pages/actvity.dart';
-import 'package:flutter_application_1/pages/detail_page.dart';
+import 'package:flutter_application_1/pages/navPages/details/detail2.dart';
+import 'package:flutter_application_1/pages/navPages/details/detail3.dart';
+import 'package:flutter_application_1/pages/navPages/details/detail_page.dart';
 import 'package:flutter_application_1/pages/music.dart';
+import 'package:flutter_application_1/pages/navPages/video.dart';
 import 'package:flutter_application_1/widgets/text/app_large_text.dart';
 import 'package:flutter_application_1/widgets/text/app_text.dart';
 
@@ -47,6 +48,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "assets/h1.jpg",
     "assets/h3.jpg",
   ];
+  List events = [
+    Event(
+        eventName: "Mindful Yoga",
+        price: 15.00,
+        description: "this is description",
+        stars: 4,
+        starsNumbers: 4.0,
+        imgName: "assets/Relax.jpg"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     //Everytime we click it get rebuild the page again
@@ -120,7 +131,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               controller: _tabController,
               children: [
                 ListView.builder(
-                  itemCount: 3,
+                  itemCount: relaxImages.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
@@ -129,7 +140,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const DetailPage()));
+                                  builder: (context) => DetailPage(
+                                        newEvent: events[0],
+                                      )));
                         }
                       }),
                       child: Container(
@@ -146,35 +159,57 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   },
                 ),
                 ListView.builder(
-                  itemCount: 3,
+                  itemCount: mediateImages.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        margin: const EdgeInsets.only(right: 10, top: 10),
-                        width: 200,
-                        height: 250,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage(mediateImages[index]),
-                                fit: BoxFit.cover)));
+                    return GestureDetector(
+                      onTap: (() {
+                        if (index == 2) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailTwoPage(),
+                              ));
+                        }
+                      }),
+                      child: Container(
+                          margin: const EdgeInsets.only(right: 10, top: 10),
+                          width: 200,
+                          height: 250,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage(mediateImages[index]),
+                                  fit: BoxFit.cover))),
+                    );
                   },
                 ),
                 ListView.builder(
-                  itemCount: 3,
+                  itemCount: healthImages.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        margin: const EdgeInsets.only(right: 10, top: 10),
-                        width: 200,
-                        height: 250,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage(healthImages[index]),
-                                fit: BoxFit.cover)));
+                    return GestureDetector(
+                      onTap: (() {
+                        if (index == 0) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailThreePage(),
+                              ));
+                        }
+                      }),
+                      child: Container(
+                          margin: const EdgeInsets.only(right: 10, top: 10),
+                          width: 200,
+                          height: 250,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage(healthImages[index]),
+                                  fit: BoxFit.cover))),
+                    );
                   },
                 ),
               ],
@@ -230,7 +265,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Activity()),
+                                    builder: (context) => const Videos()),
                               );
                             }
                           },
